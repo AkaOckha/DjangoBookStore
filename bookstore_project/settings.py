@@ -17,7 +17,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -157,7 +157,7 @@ STATICFILES_FINDERS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # django-allauth config
-SITE_ID = 1 # new
+SITE_ID = 2 # new
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend', # new
@@ -169,4 +169,4 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email' # new
 ACCOUNT_EMAIL_REQUIRED = True # new
 ACCOUNT_UNIQUE_EMAIL = True # new
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # new
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # new
