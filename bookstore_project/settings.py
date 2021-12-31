@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #Local
     'pages.apps.PagesConfig',
     'users.apps.UsersConfig',
+    'books.apps.BooksConfig',
 
     #Third-party
     'crispy_forms',
@@ -150,8 +151,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_FINDERS = [
-"django.contrib.staticfiles.finders.FileSystemFinder",
-"django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
