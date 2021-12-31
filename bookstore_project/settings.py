@@ -171,3 +171,6 @@ ACCOUNT_EMAIL_REQUIRED = True # new
 ACCOUNT_UNIQUE_EMAIL = True # new
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # new
+
+MEDIA_URL = '/media/' # new
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
