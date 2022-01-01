@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'users.apps.UsersConfig',
     'books.apps.BooksConfig',
+    'orders.apps.OrdersConfig',
 
     #Third-party
     'crispy_forms',
@@ -132,7 +133,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -145,7 +145,7 @@ LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT = 'home'
 
 import os
-
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -174,3 +174,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # new
 
 MEDIA_URL = '/media/' # new
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+STRIPE_TEST_PUBLISHABLE_KEY=os.environ.get('STRIPE_TEST_PUBLISHABLE_KEY')
+STRIPE_TEST_SECRET_KEY=os.environ.get('STRIPE_TEST_SECRET_KEY')
